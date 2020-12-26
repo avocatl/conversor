@@ -2,20 +2,20 @@ package temperature
 
 // Supported scales.
 const (
-	Celcius = iota
+	Celsius = iota
 	Fahrenheit
 	Kelvin
 )
 
 var (
 	scaleToText = map[int]string{
-		Celcius:    "Celcius",
+		Celsius:    "Celsius",
 		Fahrenheit: "Fahrenheit",
 		Kelvin:     "Kelvin",
 	}
 
 	scaleToSymbol = map[int]string{
-		Celcius:    "C",
+		Celsius:    "C",
 		Fahrenheit: "F",
 		Kelvin:     "K",
 	}
@@ -33,17 +33,17 @@ type Converter interface {
 // conversion handler that simplifies the
 // converter implementation.
 type Handler interface {
-	ToCelcius(temp float64) float64
+	ToCelsius(temp float64) float64
 	ToFahrenheit(temp float64) float64
 	ToKelvin(temp float64) float64
 }
 
 // FahrenheitBase is the reference value added to any
-// celcius temperature.
+// celsius temperature.
 const FahrenheitBase float64 = 32
 
 var fahrenheitMultiplier float64 = 1.8
 
 // KelvinBase is the reference value added to any
-// celcius temperature.
+// celsius temperature.
 const KelvinBase float64 = 273.15

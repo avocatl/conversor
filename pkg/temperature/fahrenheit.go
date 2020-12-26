@@ -4,12 +4,12 @@ type fahrenheitHandler struct {
 	Base int
 }
 
-// GetBase will return the word Celcius.
+// GetBase will return the word Celsius.
 func (fh fahrenheitHandler) GetBase() string {
 	return scaleToText[fh.Base]
 }
 
-// GetSymbol will return the Celcius symbol.
+// GetSymbol will return the Celsius symbol.
 func (fh fahrenheitHandler) GetSymbol() string {
 	return scaleToSymbol[fh.Base]
 }
@@ -18,9 +18,9 @@ func (fh fahrenheitHandler) Convert() Handler {
 	return fh
 }
 
-// ToCelcius returns the Celcius value for
+// ToCelsius returns the Celsius value for
 // the provided temperature.
-func (fh fahrenheitHandler) ToCelcius(temp float64) float64 {
+func (fh fahrenheitHandler) ToCelsius(temp float64) float64 {
 	return (temp - FahrenheitBase) * 5 / 9
 }
 
@@ -33,7 +33,7 @@ func (fh fahrenheitHandler) ToFahrenheit(temp float64) float64 {
 // ToKelvin returns the Kelvin value for
 // the provided temperature.
 func (fh fahrenheitHandler) ToKelvin(temp float64) float64 {
-	return fh.ToCelcius(temp) + KelvinBase
+	return fh.ToCelsius(temp) + KelvinBase
 }
 
 // NewFahrenheitConverter implements converter interface

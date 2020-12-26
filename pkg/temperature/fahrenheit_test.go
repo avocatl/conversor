@@ -19,24 +19,24 @@ func TestGetSymbol_Fahrenheit(t *testing.T) {
 	}
 }
 
-func TestToCelcius_Fahrenheit(t *testing.T) {
+func TestToCelsius_Fahrenheit(t *testing.T) {
 	cases := []struct {
 		desc string
 		temp float64
 		want float64
 	}{
 		{
-			"0 fahrenheit to celcius",
+			"0 fahrenheit to celsius",
 			0,
 			-17.77777777777778,
 		},
 		{
-			"100 fahrenheit to celcius",
+			"100 fahrenheit to celsius",
 			100,
 			37.77777777777778,
 		},
 		{
-			"32 fahrenheit to celcius",
+			"32 fahrenheit to celsius",
 			32,
 			0,
 		},
@@ -44,7 +44,7 @@ func TestToCelcius_Fahrenheit(t *testing.T) {
 
 	for _, c := range cases {
 		t.Run(c.desc, func(t *testing.T) {
-			got := fahrenheit.Convert().ToCelcius(c.temp)
+			got := fahrenheit.Convert().ToCelsius(c.temp)
 
 			log.Println(got)
 

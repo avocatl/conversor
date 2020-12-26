@@ -4,12 +4,12 @@ type kelvinHandler struct {
 	Base int
 }
 
-// GetBase will return the word Celcius.
+// GetBase will return the word Celsius.
 func (kh kelvinHandler) GetBase() string {
 	return scaleToText[kh.Base]
 }
 
-// GetSymbol will return the Celcius symbol.
+// GetSymbol will return the Celsius symbol.
 func (kh kelvinHandler) GetSymbol() string {
 	return scaleToSymbol[kh.Base]
 }
@@ -18,16 +18,16 @@ func (kh kelvinHandler) Convert() Handler {
 	return kh
 }
 
-// ToCelcius returns the Celcius value for
+// ToCelsius returns the Celsius value for
 // the provided temperature.
-func (kh kelvinHandler) ToCelcius(temp float64) float64 {
+func (kh kelvinHandler) ToCelsius(temp float64) float64 {
 	return temp - KelvinBase
 }
 
 // ToFahrenheit returns the Fahrenheit value for
 // the provided temperature.
 func (kh kelvinHandler) ToFahrenheit(temp float64) float64 {
-	return (kh.ToCelcius(temp) * fahrenheitMultiplier) + FahrenheitBase
+	return (kh.ToCelsius(temp) * fahrenheitMultiplier) + FahrenheitBase
 }
 
 // ToKelvin returns the Kelvin value for

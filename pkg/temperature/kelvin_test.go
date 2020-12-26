@@ -19,24 +19,24 @@ func TestGetSymbol_Kelvin(t *testing.T) {
 	}
 }
 
-func TestToCelcius_Kelvin(t *testing.T) {
+func TestToCelsius_Kelvin(t *testing.T) {
 	cases := []struct {
 		desc string
 		temp float64
 		want float64
 	}{
 		{
-			"0 kelvin to celcius",
+			"0 kelvin to celsius",
 			0,
 			-273.15,
 		},
 		{
-			"100 kelvin to celcius",
+			"100 kelvin to celsius",
 			100,
 			-173.14999999999998,
 		},
 		{
-			"32 kelvin to celcius",
+			"32 kelvin to celsius",
 			293.15,
 			20,
 		},
@@ -44,7 +44,7 @@ func TestToCelcius_Kelvin(t *testing.T) {
 
 	for _, c := range cases {
 		t.Run(c.desc, func(t *testing.T) {
-			got := kelvin.Convert().ToCelcius(c.temp)
+			got := kelvin.Convert().ToCelsius(c.temp)
 
 			log.Println(got)
 
