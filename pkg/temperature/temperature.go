@@ -7,19 +7,25 @@ const (
 	Kelvin
 )
 
-var (
-	scaleToText = map[int]string{
+func scaleToText(scale int) string {
+	scaleToText := map[int]string{
 		Celsius:    "Celsius",
 		Fahrenheit: "Fahrenheit",
 		Kelvin:     "Kelvin",
 	}
 
-	scaleToSymbol = map[int]string{
+	return scaleToText[scale]
+}
+
+func scaleToSymbol(scale int) string {
+	scaleToSymbol := map[int]string{
 		Celsius:    "C",
 		Fahrenheit: "F",
 		Kelvin:     "K",
 	}
-)
+
+	return scaleToSymbol[scale]
+}
 
 // Converter interface describes a temperature
 // conversion handler.
@@ -42,7 +48,7 @@ type Handler interface {
 // celsius temperature.
 const FahrenheitBase float64 = 32
 
-var fahrenheitMultiplier float64 = 1.8
+const fahrenheitMultiplier = 1.8
 
 // KelvinBase is the reference value added to any
 // celsius temperature.

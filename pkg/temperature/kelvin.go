@@ -6,12 +6,12 @@ type kelvinHandler struct {
 
 // GetBase will return the word Celsius.
 func (kh kelvinHandler) GetBase() string {
-	return scaleToText[kh.Base]
+	return scaleToText(kh.Base)
 }
 
 // GetSymbol will return the Celsius symbol.
 func (kh kelvinHandler) GetSymbol() string {
-	return scaleToSymbol[kh.Base]
+	return scaleToSymbol(kh.Base)
 }
 
 func (kh kelvinHandler) Convert() Handler {
