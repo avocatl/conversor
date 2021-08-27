@@ -6,6 +6,9 @@ A bunch of conversion tools for diferent type of units [metric and imperial].
 
 ## Supported
 
-- Temperature: [x] Celcius [x] Fahrenheit [x] Kelvin
+**Temperature** 
+- [x] Celcius 
+- [x] Fahrenheit 
+- [x] Kelvin
 
 ## :warning: WIP
