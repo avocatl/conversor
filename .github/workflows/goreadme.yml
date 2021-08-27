@@ -1,3 +1,4 @@
+name: Generate readme
 on:
   push:
     branches:
@@ -22,3 +23,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           import-path: "github.com/avocatl/conversor"
           recursive: true
+          email: 7926849+VictorAvelar@users.noreply.github.com
+          readme-file: docs/README.md
