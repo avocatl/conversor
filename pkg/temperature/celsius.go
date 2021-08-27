@@ -6,12 +6,12 @@ type celsiusHandler struct {
 
 // GetBase will return the word Celsius.
 func (ch celsiusHandler) GetBase() string {
-	return scaleToText[ch.Base]
+	return scaleToText(ch.Base)
 }
 
 // GetSymbol will return the Celsius symbol.
 func (ch celsiusHandler) GetSymbol() string {
-	return scaleToSymbol[ch.Base]
+	return scaleToSymbol(ch.Base)
 }
 
 func (ch celsiusHandler) Convert() Handler {
